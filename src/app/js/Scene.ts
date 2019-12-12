@@ -6,6 +6,8 @@ class Scene {
   private camera: THREE.PerspectiveCamera;
   private renderer: THREE.WebGLRenderer;
 
+  private controls: OrbitControls;
+
   private torusMesh: THREE.Mesh;
 
   constructor() {
@@ -14,6 +16,8 @@ class Scene {
     this.renderer = new THREE.WebGLRenderer();
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(this.renderer.domElement);
+
+    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
 
     this.bind();
   }
@@ -38,6 +42,8 @@ class Scene {
   render() {
     requestAnimationFrame(() => this.render());
     this.renderer.render(this.scene, this.camera);
+
+    this.controls.update();
 
     this.torusMesh.rotation.x += 0.01;
     this.torusMesh.rotation.y += 0.01;
