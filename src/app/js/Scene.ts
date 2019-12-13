@@ -36,8 +36,8 @@ class Scene {
     this.camera.position.set(2, 2, 2);
     this.camera.lookAt(0, 0, 0);
     const torusGeometry = new THREE.TorusKnotGeometry(0.8, 0.2, 200, 32);
-    const torusMateriel = new THREE.MeshNormalMaterial();
-    this.torusMesh = new THREE.Mesh(torusGeometry, torusMateriel);
+    const torusMaterial = new THREE.MeshNormalMaterial();
+    this.torusMesh = new THREE.Mesh(torusGeometry, torusMaterial);
     this.scene.add(this.torusMesh);
   }
 
