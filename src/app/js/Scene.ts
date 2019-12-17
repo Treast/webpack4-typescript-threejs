@@ -23,7 +23,7 @@ class Scene {
   }
 
   bind() {
-    window.addEventListener('resize', () => this.onResize);
+    window.addEventListener('resize', () => this.onResize());
   }
 
   onResize() {
